@@ -16,8 +16,9 @@ function handleLogin(e) {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((response) => {
-        const user = response.user.id;
-        navigate("/home");
+        const user = response.user.uid;
+        localStorage.setItem("userId", user);
+        navigate("/home", {replace: true});
         Swal.fire({
             icon: "success",
             title: "Login Successful",

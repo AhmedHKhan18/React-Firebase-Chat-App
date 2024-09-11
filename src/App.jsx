@@ -2,6 +2,7 @@ import React from "react";
 import Login from "./screens/login";
 import Signup from "./screens/signup";
 import Home from "./screens/home";
+import Loading from "./screens/loading";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,6 +16,11 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
+      element: <Loading />,
+      errorElement: <NotFound />
+    },
+    {
+      path: "/login",
       element: <Login />,
       errorElement: <NotFound />
     },
