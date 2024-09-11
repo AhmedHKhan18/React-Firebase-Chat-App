@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 
-export default function SignUp() {
+export default function Signup() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
