@@ -5,6 +5,8 @@ import moment from 'moment'
 import { IoMdSend } from "react-icons/io";
 import { useLocation } from 'react-router-dom';
 
+const defaultImg = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png"
+
 
 const Chat = () => {
   const [message, setMessage] = useState('')
@@ -44,10 +46,10 @@ const Chat = () => {
   
   let myUid = localStorage.getItem("userId");
     return (
-    <div className="flex-1 bg-slate-800 flex flex-col justify-between">
+    <div className="sm:flex-1 sm:bg-slate-800 sm:flex sm:flex-col sm:justify-between hidden">
         <div>
         <div className='h-14 bg-green-600 flex items-center px-4 mb-2 text-white'>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/2048px-Default_pfp.svg.png" className="h-10 w-10 rounded-full mr-2" />
+        <img src={state.img || defaultImg} className="h-10 w-10 rounded-full mr-2" />
         <div>
             <h2 className='font-semibold text-xl uppercase'>{state.name}</h2>
             <h2 className="text-sm">{state.email}</h2>
@@ -55,7 +57,7 @@ const Chat = () => {
         </div>
       {/* Chat messages */}
             <div>
-              <div className='overflow-y-auto h-[79vh]'>
+              <div className='overflow-y-auto h-[34em]'>
           {chatlist.length > 0 ? (chatlist.map((item, index) => {
             return (
                 <div className={`mb-4 w-auto flex ${item.senderUid == myUid ? 'justify-end': 'justify-start'}`}>

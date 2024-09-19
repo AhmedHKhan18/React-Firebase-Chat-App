@@ -27,8 +27,9 @@ const handleLogout = () => {
       };
 
   return (
-      <Dropdown label="" className="bg-gray-800">
+      <Dropdown className="bg-slate-800">
       <Dropdown.Item onClick={() => handleLogout()}>Sign out</Dropdown.Item>
+      <Dropdown.Item onClick={() => navigate("/profile")}>Profile</Dropdown.Item>
     </Dropdown>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Login from "./screens/login";
 import Signup from "./screens/signup";
 import Home from "./screens/home";
+import Profile from "./screens/profile";
 import Loading from "./screens/loading";
 import {
   createBrowserRouter,
@@ -32,6 +33,11 @@ function App() {
     {
       path: "/home",
       element: <Home />,
+      errorElement: <NotFound />
+    },
+    {
+      path: "/profile",
+      element: <Profile />,
       errorElement: <NotFound />
     },
   ]);
